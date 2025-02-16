@@ -24,12 +24,10 @@ spec:
       containers: 
       - name: video-streaming
         image: $CONTAINER_REGISTRY/video-streaming:$VERSION
-        imagePullPolicy: Always
+        imagePullPolicy: IfNotPresent
         env:
         - name: PORT
           value: "4000"
-      imagePullSecrets:
-      - name: acr-secret
 ---
 apiVersion: v1
 kind: Service
